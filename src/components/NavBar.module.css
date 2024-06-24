@@ -7,7 +7,7 @@ body{
 }
 .nicenav{
   display: flex;  
-  gap: 10px;
+  gap: 5px;
   margin: 20px;
 } 
 
@@ -18,13 +18,14 @@ body{
     font-size: x-large;
     color: #ccc;
     text-decoration: none;
-    padding: 14px;
+    padding: 10px;
+    scale: 0.8;
     border-radius: 16px
 }
 
 
 .itemnav:hover{
-    scale: 0.95;
+    scale: 1;
     background-color: #5a5a5a;
     font-size: x-large;
     

@@ -1,9 +1,62 @@
-
-
-
 .LoginForm{
+    color: #ccc;    
+    
+    padding: 50px;
+    background-color: #222;
+}
+
+.LoginForm h1{
+    color: greenyellow;    
+    margin-bottom: 20px;
+
+}
+
+.LoginForm hr {
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: none;
+    width: 90%;
+}
+
+
+.input_text{
+    border: none;
+    margin: 10px;
+    margin-left: 30px;
+    width: 80%;
+    background-color: #888;
+    margin-bottom: 40px;
+    
+}
+
+.input_text:focus{
+    background-color: #fff;
+    outline: none;
+    scale: 1.1;
+}
+
+.input_text:hover{
+    background-color: #a6a6a6;
+}
+
+.div_button{
     display: flex;
-    width: 100%;
+    
     justify-content: center;
     align-items: center;
+}
+
+
+.input_button{
+    width: 40%;
+    background-color: #ccc; 
+    padding: 8px;
+    
+    margin: 10px auto 0 auto;
+    
+}
+
+.LoginForm{
+    color: #ccc;    
 }

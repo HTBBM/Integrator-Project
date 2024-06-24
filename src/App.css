@@ -3,4 +3,10 @@
   padding: 0;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+body, html, #root{
+  height: 100%;
+  background-color: #333;
 }

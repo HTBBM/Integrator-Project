@@ -5,6 +5,7 @@ import Home from './components/pages/Home'
 import Login from './components/pages/Login'
 import NavBar from './components/NavBar'
 import Container from './components/layout/Container'
+import DashBoard from './components/pages/DashBoard'
 
 export default function App(){
   return(
@@ -18,7 +19,7 @@ export default function App(){
 
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
-
+        <Route path='/dashboard' element={<DashBoard/>}/>
     </Routes>
     </Container>
     <p>Footer</p>

@@ -1,18 +1,21 @@
 .LoginForm{
-    color: #ccc;    
-    
+
     padding: 50px;
-    background-color: #222;
+    background-color: #10141c;
+    border: 1px solid #73FAC9;
+    
+    
 }
 
 .LoginForm h1{
-    color: greenyellow;    
+    margin-top: -10px;
+    color: #73FAC9;    
     margin-bottom: 20px;
 
 }
 
 .LoginForm hr {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     background-color: #fff;
     border-radius: 50%;
     box-shadow: none;
@@ -21,24 +24,38 @@
 
 
 .input_text{
+    color: #08A7AC;
+    text-align: start;
+    padding: 2px;
     border: none;
     margin: 10px;
     margin-left: 30px;
     width: 80%;
-    background-color: #888;
-    margin-bottom: 40px;
+    background-color: #1D576C;
+    margin-bottom: 50px;
     
 }
 
 .input_text:focus{
+    
     background-color: #fff;
+    color: #10141c;
     outline: none;
     scale: 1.1;
 }
 
 .input_text:hover{
+    scale: 1.05;
     background-color: #a6a6a6;
+    
 }
+
+.input_text:hover:focus{
+    scale: 1.1;
+    background-color: #fff;
+    color: #10141c;
+}
+
 
 .div_button{
     display: flex;
@@ -50,11 +67,38 @@
 
 .input_button{
     width: 40%;
-    background-color: #ccc; 
     padding: 8px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    background-color: #73FAC9;
     
-    margin: 10px auto 0 auto;
     
+    
+    
+    
+}
+
+.input_button:hover{
+    scale: 1.1;
+    
+    animation: button_check 5s ease-in;
+
+}
+
+@keyframes button_check {
+
+    0% {
+        background-color: #73FAC9;
+      }
+      50% {
+        background-color: #fff;
+        color: #1D576C;
+      }
+      100% {
+        background-color: #73FAC9;
+      }
+
 }
 
 .LoginForm{

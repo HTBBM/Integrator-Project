@@ -1,0 +1,26 @@
+.div_wrapper{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #242424;
+    color: white;
+}
+
+.div_wrapper:hover{
+    border: 1px solid #73FAC9;
+    color: #73FAC9;
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.div_wrapper h1{
+    font-size: large;
+    font-family: "Roboto Mono", monospace;
+    text-decoration: none;
+    
+}
+
+.div_wrapper h1:hover{
+    color: #73FAC9;
+}

@@ -1,9 +1,13 @@
+import Item from "../Item";
+import styles from './DashBoard.module.css'
+
 export default function DashBoard(){
     return(
-        <div>
-            <h1>
-                DashBoard
-            </h1>
+        <div className={styles.dashboard}>
+            <Item name={"3° Eletro"} to={"/login"}/>
+            <Item/>
+            <Item/>
+            <Item/>
         </div>
     )
 }

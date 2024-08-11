@@ -1,4 +1,4 @@
-.div_wrapper{
+.div_wrapper {
     display: flex;
     align-items: center;
     width: 200px;
@@ -7,20 +7,51 @@
     color: white;
 }
 
-.div_wrapper:hover{
+.div_wrapper:hover {
     border: 1px solid #73FAC9;
     color: #73FAC9;
     scale: 1.05;
     cursor: pointer;
 }
 
-.div_wrapper h1{
+.div_wrapper h1 {
     font-size: large;
     font-family: "Roboto Mono", monospace;
     text-decoration: none;
-    
+
 }
 
-.div_wrapper h1:hover{
+.div_wrapper h1:hover {
     color: #73FAC9;
+}
+
+.div_wrapperVent {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    width: 200px;
+    height: 200px;
+    color: #333;
+}
+
+.div_wrapperVent:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.div_wrapperVent h1 {
+    font-size: large;
+    font-family: "Roboto Mono", monospace;
+    text-decoration: none;
+
+}
+
+.online {
+    background-color: #73FAC9;
+}
+
+.offline {
+    background-color: #FF4345;
 }

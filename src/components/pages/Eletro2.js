@@ -1,21 +1,19 @@
 import Item from "../Item";
-import { useState } from "react";
+
 import axios from "axios";
 
 import styles from "./Eletro.module.css";
 
 export default function Eletro2() {
-  const [vent, setVent] = useState();
-  const [status, setStatus] = useState();
 
   let axiosConfig = {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
-      "Acess-Control-Allow-Origin": "*",
+
     },
   };
 
-  function handleVent() {
+  function handleVent(vent, status) {
     console.log({
       vent,
       status,
@@ -26,13 +24,13 @@ export default function Eletro2() {
 
   async function sendPost(vent, status) {
     const post = {
-      vent,
-      status,
+      "var1": vent,
+      "var2": status
     };
 
     try {
       await axios.post(
-        "https://45af37b1-3ead-4d72-b2d1-f81c4bd27e46-00-h1qa30kpjlfd.kirk.replit.dev:8080/",
+        "http://192.168.0.23/",
         post,
         axiosConfig,
       );
@@ -44,18 +42,15 @@ export default function Eletro2() {
 
   return (
     <div className={styles.dashboard}>
-      <Item
-        config={true}
-        onClik={() => {
-          setVent(1);
-          setStatus(false);
-          handleVent();
-        }}
-        s
-      />
-      <Item config={true} />
-      <Item config={true} status={true} />
-      <Item config={true} />
+      <div onClick={() => handleVent(1, false)}
+      > <Item config={true} /></div>
+      <div onClick={() => console.log("2")}
+      > <Item config={true} /></div>
+      <div onClick={() => console.log("3")}
+      > <Item config={true} status={true} /></div>
+      <div onClick={() => console.log("4")}
+      > <Item config={true} /></div>
+
     </div>
   );
 }

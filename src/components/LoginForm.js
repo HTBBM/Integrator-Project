@@ -1,13 +1,17 @@
-
-import { Navigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
+import { useContext, useState } from 'react'
 
-import { useState } from 'react'
+import { AuthContext } from './utils/AuthContext'; // Certifique-se de ajustar o caminho corretamente
 
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LoginForm() {
+
+    const navigate = useNavigate(); // Inicializa useNavigate
+
+    const { setAuth } = useContext(AuthContext);
 
     let axiosConfig = {
         headers: {
@@ -17,36 +21,38 @@ export default function LoginForm() {
     }
 
 
-    async function sendPost(user, pass) {
-        const post = {
-            "var1": user,
-            "var2": pass
-        };
-
+    async function getUser(usr, pass) {
         try {
-            await axios.post(
-                "http://192.168.0.23/login",
-                post,
-                axiosConfig,
-            );
-            console.log("Post Enviado!");
+            const response = await axios.get(`http://192.168.0.23/login?var1=${usr}&var2=${pass}`, axiosConfig);
+
+            console.log(response.data.login_s)
+
+            if (response.data.login_s === "true") {
+                console.log("logando")
+                setAuth({ token: true });  // Atualiza o token no contexto
+                navigate('/dashboard');  // Redireciona para o DashBoard
+            }
+            else {
+                console.log("vishhh...")
+                setAuth({ token: false });  // Atualiza o token no contexto
+            }
+
         } catch (error) {
-            console.error("Error ao enviar post:", error);
+            console.error(error);
         }
     }
 
-    const [user, setUser] = useState()
+    const [user, setUser] = useState('')
 
-    const [password, setPassword] = useState()
+    const [password, setPassword] = useState('')
 
     function sendLogin(e) {
         e.preventDefault()
         console.log(user)
         console.log(password)
-        sendPost(user, password);
-        
-    }
+        getUser(user, password);
 
+    }
 
     return (
         <div>

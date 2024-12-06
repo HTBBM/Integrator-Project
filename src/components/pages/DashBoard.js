@@ -5,9 +5,9 @@ export default function DashBoard() {
     return (
         <div className={styles.dashboard}>
             <Item name={"2° Eletro"} to={"/dashboard/eletro2"} />
-            <Item />
-            <Item />
-            <Item />
+            <Item name={" "}/>
+            <Item name={" "}/>
+            <Item name={" "}/>
         </div>
     );
 }

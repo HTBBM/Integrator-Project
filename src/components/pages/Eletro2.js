@@ -11,7 +11,7 @@ export default function Eletro2() {
 
 
 
-  const [statusArray, setStatusArray] = useState([true, true, true, true]);
+  const [statusVent, setStatusVent] = useState(true);
 
   const axiosConfig = {
     headers: {
@@ -30,15 +30,10 @@ export default function Eletro2() {
         const response = await axios.get(`http://192.168.0.23/dashboard/eletro2`, axiosConfig);
 
 
-        const newStatusArray = [
-          response.data.vent_status_1,
-          response.data.vent_status_2,
-          response.data.vent_status_3,
-          response.data.vent_status_4,
-        ];
+        const statusVent = response.status;
 
-        console.log(newStatusArray);
-        setStatusArray(newStatusArray);
+        console.log(statusVent);
+        setStatusVent(statusVent);
 
 
 
@@ -53,19 +48,17 @@ export default function Eletro2() {
     getVent();
   }, []);
 
-  function handleVent(vent, status) {
+  function handleVent(status) {
     console.log({
-      vent,
-      status,
+      status
     });
 
-    sendPost(vent, status);
+    sendPost(status);
   }
 
-  async function sendPost(vent, status) {
+  async function sendPost(status) {
     const post = {
-      "var1": vent,
-      "var2": status
+      "var1": status
     };
 
     try {
@@ -85,17 +78,8 @@ export default function Eletro2() {
 
   return (
     <div className={styles.dashboard}>
-      <div onClick={() => handleVent(0, !statusArray[0])}>
-        <Item config={true} status={statusArray[0]} />
-      </div>
-      <div onClick={() => handleVent(1, !statusArray[1])}>
-        <Item config={true} status={statusArray[1]} />
-      </div>
-      <div onClick={() => handleVent(2, !statusArray[2])}>
-        <Item config={true} status={statusArray[2]} />
-      </div>
-      <div onClick={() => handleVent(3, !statusArray[3])}>
-        <Item config={true} status={statusArray[3]} />
+      <div onClick={() => handleVent(!statusVent)}>
+        <Item config={true} status={statusVent} />
       </div>
     </div>
   );

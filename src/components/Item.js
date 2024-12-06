@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
 
 export default function Item({ name, to, config, status }) {
+
+    if(!name && name !== ""){
+        if (status === true){
+            name = "Ligado"
+        }else{
+            name = "Desligado"
+        }
+    }
+    
     let statusClass = "";
     switch (status) {
         case true:

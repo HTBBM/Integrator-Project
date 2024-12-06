@@ -1,0 +1,54 @@
+.container{
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+.container input{
+    padding-inline: 10px;
+    font-size: x-large;
+    border: none;
+    background-color: #242424;
+    color: #ccc;
+}
+
+
+.ligado{
+  color: #73FAC9;
+}
+
+.desligado{
+  color: #FF4345;
+}
+
+.LoginForm{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 50px;
+  background-color: #10141c;
+  border: 1px solid #73FAC9;  
+}
+
+.submitBtn{
+  
+
+  background-color: #242424;
+  color: #ccc;
+
+  padding-inline: 50px;
+  padding-block: 5px;
+  font-size: large;
+
+  align-items: flex-end;
+  border: none;
+}
+
+.submitBtn:hover{
+  background-color: #73FAC9;
+  color: #242424;
+  transform: scale(1.25);
+}

@@ -5,6 +5,7 @@ import { AuthContext } from './utils/AuthContext'; // Certifique-se de ajustar o
 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Constants from './IP';
 
 
 export default function LoginForm() {
@@ -23,7 +24,7 @@ export default function LoginForm() {
 
     async function getUser(usr, pass) {
         try {
-            const response = await axios.get(`http://192.168.0.23/login?var1=${usr}&var2=${pass}`, axiosConfig);
+            const response = await axios.get(`http://${Constants.IP}/login?var1=${usr}&var2=${pass}`, axiosConfig);
 
             console.log(response.data.login_s)
 

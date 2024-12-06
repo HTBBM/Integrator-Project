@@ -5,6 +5,7 @@ export default function NavBar() {
     return (
         <div className={styles.nicenav}>
             <Link className={styles.itemnav} to='/dashboard'>Dashboard</Link>
+            <Link className={styles.itemnav} to='/timer'>Timer</Link>
             <Link className={styles.itemnav} to='/login'>Login</Link>
         </div>
     )
